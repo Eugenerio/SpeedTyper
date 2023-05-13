@@ -85,8 +85,9 @@ const timeReduce = () =>{
 };
 
 //end test
-const displayResult = () =>{
+const displayResult = () => {
     document.querySelector(".result").style.display = "block";
+    document.getElementById("restart-test").style.display = "block";
     clearInterval(timer);
     document.getElementById("stop-test").style.display = "none";
     userInput.disabled = true;
@@ -98,14 +99,27 @@ const displayResult = () =>{
     document.getElementById("accuracy").innerText = Math.round(((userInput.value.length - mistakes) / userInput.value.length) * 100) + "%";
 };
 
+
 //start test
-const startTest = () =>{
+const startTest = () => {
+    document.getElementById("restart-test").style.display = "none";
     mistakes = 0;
     timer = "";
     userInput.disabled = false;
     timeReduce();
     document.getElementById("start-test").style.display = "none";
     document.getElementById("stop-test").style.display = "block";
+};
+
+
+// restat test
+const restartTest = () => {
+    document.querySelector(".result").style.display = "none";
+    document.getElementById("restart-test").style.display = "none";
+    document.getElementById("start-test").style.display = "block";
+    userInput.value = "";
+    quoteSelection.innerHTML = "";
+    remderNewQuote();
 };
 
 window.onload = () =>{
