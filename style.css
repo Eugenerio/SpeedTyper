@@ -12,6 +12,7 @@ body{
 }
 
 .container{
+    position: relative;
     width:  80vmin;
     padding: 50px 30px;
     background-color: #fff;
@@ -48,6 +49,21 @@ textarea{
 
 button {
     float: right;
+    margin-top: 20px;
+    background-color: #1565c0;
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+#restart-test {
+    position: absolute;
+    top: 20px; 
+    left: 20px;
+    display: none;
+    float: left;
     margin-top: 20px;
     background-color: #1565c0;
     color: #fff;
